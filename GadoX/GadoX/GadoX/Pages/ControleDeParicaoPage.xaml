@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage Title="Controle de parição" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             xmlns:local="clr-namespace:GadoX"
+             x:Class="GadoX.Pages.ControleDeParicaoPage">
+  <ScrollView BackgroundColor="#EEEEEE">
+    <StackLayout Spacing="0">
+      <Label TextColor="#717175" Text="{Binding TotalDeVacasText}" HorizontalTextAlignment="Center" FontAttributes="Bold" HeightRequest="40" VerticalTextAlignment="Center" FontSize="18" >
+        <Label.Margin>
+          <OnPlatform x:TypeArguments="Thickness"
+						iOS="16,24,16,4"
+						Android="16, 13"/>
+        </Label.Margin>
+        <Label.FontSize>
+          <OnPlatform x:TypeArguments="x:Double"
+						iOS="13"
+						Android="14"/>
+        </Label.FontSize>
+      </Label>
+
+      <BoxView BackgroundColor="#C8C7CC">
+        <BoxView.HeightRequest>
+          <OnPlatform x:TypeArguments="x:Double"
+						iOS="0.5"
+						Android="0.3"/>
+        </BoxView.HeightRequest>
+      </BoxView>
+
+      <syncfusion:SfDataGrid x:Name="VacasGrid"
+                           Grid.Row="2"
+                           ColumnSizer="Star"
+                           AutoGenerateColumns="False"
+                           AllowSorting="True"
+                           SelectionMode="Single"
+                           ItemsSource="{Binding ListaDeVacas}">
+        <syncfusion:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns">
+          <syncfusion:GridTextColumn HeaderText="Númeração"
+                                     MappingName="Numeracao" />
+          <syncfusion:GridTextColumn HeaderText="Total De crias"
+                                     MappingName="NumeroDeCrias" />
+          <syncfusion:GridTextColumn HeaderText="Ano de Nascimento"
+                                     MappingName="AnoDeNascimento" />
+        </syncfusion:SfDataGrid.Columns>
+      </syncfusion:SfDataGrid>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

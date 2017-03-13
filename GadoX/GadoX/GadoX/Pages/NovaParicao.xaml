@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Nova Parição"
+             xmlns:local="clr-namespace:GadoX"
+             x:Class="GadoX.Pages.NovaParicao">
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Icon="ic_check_white_48dp"
+                 Text="Ok"
+      Command="{Binding AddCommand}" />
+  </ContentPage.ToolbarItems>
+  
+  <!--Arrumar o OnPLataform-->
+  
+  <ScrollView BackgroundColor="#EEEEEE">
+    <StackLayout Spacing="0">
+      <Label TextColor="#717175" Text="DADOS DA PARIÇÃO">
+        <Label.Margin>
+          <OnPlatform x:TypeArguments="Thickness"
+						iOS="16,24,16,4"
+						Android="16, 13"/>
+        </Label.Margin>
+        <Label.FontSize>
+          <OnPlatform x:TypeArguments="x:Double"
+						iOS="13"
+						Android="14"/>
+        </Label.FontSize>
+      </Label>
+
+      <BoxView BackgroundColor="#C8C7CC">
+        <BoxView.HeightRequest>
+          <OnPlatform x:TypeArguments="x:Double"
+						iOS="0.5"
+						Android="0.3"/>
+        </BoxView.HeightRequest>
+      </BoxView>
+
+      <Grid HeightRequest="45"
+				BackgroundColor="White"
+				ColumnSpacing="0">
+
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="16"/>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="1" Text="Vaca: " VerticalTextAlignment="Center" />
+        <Label Grid.Column="2" Text="Numero da vaca mãe" VerticalTextAlignment="Center" HorizontalTextAlignment="End" Margin="0, 0, 16, 0" />
+
+        <BoxView BackgroundColor="#C8C7CC" Grid.Column="1" Grid.ColumnSpan="2" VerticalOptions="End">
+          <BoxView.HeightRequest>
+            <OnPlatform x:TypeArguments="x:Double"
+							iOS="0.5"
+							Android="0.3"/>
+          </BoxView.HeightRequest>
+        </BoxView>
+      </Grid>
+      
+      <Grid HeightRequest="45"
+				BackgroundColor="White"
+				ColumnSpacing="0">
+
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="16"/>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="1" Text="Data" VerticalTextAlignment="Center" />
+        <DatePicker Grid.Column="2" VerticalOptions="Center" HorizontalOptions="End" Margin="0, 0, 16, 0" />
+
+        <BoxView BackgroundColor="#C8C7CC" Grid.Column="1" Grid.ColumnSpan="2" VerticalOptions="End">
+          <BoxView.HeightRequest>
+            <OnPlatform x:TypeArguments="x:Double"
+							iOS="0.5"
+							Android="0.3"/>
+          </BoxView.HeightRequest>
+        </BoxView>
+      </Grid>
+    
+      <Grid HeightRequest="45"
+				BackgroundColor="White"
+				ColumnSpacing="0">
+
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="16"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="1" Text="Sexo" VerticalTextAlignment="Center" />
+        <Picker x:Name="PickerDeSexo" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" Margin="0, 0, 16, 0" />
+
+        <BoxView BackgroundColor="#C8C7CC" Grid.Column="1" Grid.ColumnSpan="2" VerticalOptions="End">
+          <BoxView.HeightRequest>
+            <OnPlatform x:TypeArguments="x:Double"
+							iOS="0.5"
+							Android="0.3"/>
+          </BoxView.HeightRequest>
+        </BoxView>
+      </Grid>
+    
+      <Grid HeightRequest="45"
+				BackgroundColor="White"
+				ColumnSpacing="0">
+
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="16"/>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="1" Text="Morte" VerticalTextAlignment="Center" />
+        <Switch Grid.Column="2" Margin="0, 0, 16, 0"  />
+
+        <BoxView BackgroundColor="#C8C7CC" Grid.Column="1" Grid.ColumnSpan="2" VerticalOptions="End">
+          <BoxView.HeightRequest>
+            <OnPlatform x:TypeArguments="x:Double"
+							iOS="0.5"
+							Android="0.3"/>
+          </BoxView.HeightRequest>
+        </BoxView>
+      </Grid>
+    
+      <Label TextColor="#717175" Text="OBSERVAÇÕES">
+        <Label.Margin>
+          <OnPlatform x:TypeArguments="Thickness"
+						iOS="16,24,16,4"
+						Android="16, 13"/>
+        </Label.Margin>
+        <Label.FontSize>
+          <OnPlatform x:TypeArguments="x:Double"
+						iOS="13"
+						Android="14"/>
+        </Label.FontSize>
+      </Label>
+
+      <Grid
+				BackgroundColor="White"
+				ColumnSpacing="0">
+        
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Editor HeightRequest="150" />
+      
+      </Grid>
+    
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

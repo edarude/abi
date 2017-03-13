@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="Painel Principal" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GadoX.PainelPrincipal">
+	<Grid Padding="20" RowSpacing="15" ColumnSpacing="15" >
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<Frame Grid.Row="0" Grid.Column="0" MinimumWidthRequest="30" MinimumHeightRequest="30" >
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
+				<Label Grid.Row="0" Text="18 Machos" LineBreakMode="CharacterWrap" HorizontalOptions="Center" VerticalOptions="Center" FontSize="26" FontAttributes="Bold"/>
+				<Label Grid.Row="1" VerticalOptions="End" Text="8 - 12 meses" HorizontalOptions="Center" FontSize="15"/>
+			</Grid>
+		</Frame>
+		<Frame Grid.Row="0" Grid.Column="1" MinimumWidthRequest="30" MinimumHeightRequest="30" >
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
+				<Label Grid.Row="0" Text="7 Machos" LineBreakMode="CharacterWrap" HorizontalOptions="Center" VerticalOptions="Center" FontSize="26" FontAttributes="Bold"/>
+				<Label Grid.Row="1" VerticalOptions="End" Text="12 - 18 meses" HorizontalOptions="Center" FontSize="15"/>
+			</Grid>
+		</Frame>
+		<Frame Grid.Row="1" Grid.Column="0" MinimumWidthRequest="30" MinimumHeightRequest="30" >
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
+				<Label Grid.Row="0" Text="11 Machos" LineBreakMode="CharacterWrap" HorizontalOptions="Center" VerticalOptions="Center" FontSize="26" FontAttributes="Bold"/>
+				<Label Grid.Row="1" VerticalOptions="End" Text="18 - 24 meses" HorizontalOptions="Center" FontSize="15"/>
+			</Grid>
+		</Frame>
+		<Frame Grid.Row="1" Grid.Column="1" MinimumWidthRequest="30" MinimumHeightRequest="30" >
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
+				<Label Grid.Row="0" Text="25 Machos" LineBreakMode="CharacterWrap" HorizontalOptions="Center" VerticalOptions="Center" FontSize="26" FontAttributes="Bold"/>
+				<Label Grid.Row="1" VerticalOptions="End" Text="24+ meses" HorizontalOptions="Center" FontSize="15"/>
+			</Grid>
+		</Frame>
+		<Frame Grid.Row="2" Grid.Column="0" MinimumWidthRequest="30" MinimumHeightRequest="30" >
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
+				<Label Grid.Row="0" Text="10 Fêmeas" LineBreakMode="CharacterWrap" HorizontalOptions="Center" VerticalOptions="Center" FontSize="26" FontAttributes="Bold"/>
+				<Label Grid.Row="1" VerticalOptions="End" Text="8 - 12 meses" HorizontalOptions="Center" FontSize="15"/>
+			</Grid>
+		</Frame>
+		<Frame Grid.Row="2" Grid.Column="1" MinimumWidthRequest="30" MinimumHeightRequest="30" >
+			<Frame.GestureRecognizers>
+				<TapGestureRecognizer Tapped="ListaVacas"/>
+			</Frame.GestureRecognizers>
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
+				<Label x:Name="TotalDeVacas" Grid.Row="0" Grid.RowSpan="2" LineBreakMode="CharacterWrap" HorizontalOptions="Center" VerticalOptions="Center" FontSize="26" FontAttributes="Bold"/>
+			</Grid>
+		</Frame>
+		<Frame Grid.Row="3" Grid.Column="0" MinimumWidthRequest="30" MinimumHeightRequest="30" >
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
+				<Label Grid.Row="0" Text="19 Touros" Grid.RowSpan="2" LineBreakMode="CharacterWrap" HorizontalOptions="Center" VerticalOptions="Center" FontSize="26" FontAttributes="Bold"/>
+			</Grid>
+		</Frame>
+		<Frame Grid.Row="3" Grid.Column="1" MinimumWidthRequest="30" MinimumHeightRequest="30" >
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
+				<Label Grid.Row="0" Text="18 Refugos" Grid.RowSpan="2" LineBreakMode="CharacterWrap" HorizontalOptions="Center" VerticalOptions="Center" FontSize="26" FontAttributes="Bold"/>
+			</Grid>
+		</Frame>
+	</Grid>
+</ContentPage>

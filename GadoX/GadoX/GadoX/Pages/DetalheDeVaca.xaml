@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="{Binding NumeracaoDaVaca}"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             xmlns:local="clr-namespace:GadoX"
+             x:Class="GadoX.Pages.DetalheDeVaca">
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Icon="ic_add_white_48dp"
+                 Text="Add"
+       Command="{Binding NovaParicaoCommand}" />
+  </ContentPage.ToolbarItems>
+  <ScrollView BackgroundColor="#EEEEEE">
+    <StackLayout Spacing="0">
+      <Label TextColor="#717175" Text="DETALHES DA VACA">
+        <Label.Margin>
+          <OnPlatform x:TypeArguments="Thickness"
+						iOS="16,24,16,4"
+						Android="16, 13"/>
+        </Label.Margin>
+        <Label.FontSize>
+          <OnPlatform x:TypeArguments="x:Double"
+						iOS="13"
+						Android="14"/>
+        </Label.FontSize>
+      </Label>
+
+      <BoxView BackgroundColor="#C8C7CC">
+        <BoxView.HeightRequest>
+          <OnPlatform x:TypeArguments="x:Double"
+						iOS="0.5"
+						Android="0.3"/>
+        </BoxView.HeightRequest>
+      </BoxView>
+
+      <Grid HeightRequest="45"
+				BackgroundColor="White"
+				ColumnSpacing="0">
+
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="16"/>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="1" Text="Idade: " VerticalTextAlignment="Center" />
+        <Label Grid.Column="2" Text="18 Meses" VerticalTextAlignment="Center" HorizontalTextAlignment="End" Margin="0, 0, 16, 0" />
+
+        <BoxView BackgroundColor="#C8C7CC" Grid.Column="1" Grid.ColumnSpan="2" VerticalOptions="End">
+          <BoxView.HeightRequest>
+            <OnPlatform x:TypeArguments="x:Double"
+							iOS="0.5"
+							Android="0.3"/>
+          </BoxView.HeightRequest>
+        </BoxView>
+      </Grid>
+
+      <Grid HeightRequest="45"
+				BackgroundColor="White"
+				ColumnSpacing="0">
+
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="16"/>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="1" Text="Total de crias: " VerticalTextAlignment="Center" />
+        <Label Grid.Column="2" Text="3 crias" VerticalTextAlignment="Center" HorizontalTextAlignment="End" Margin="0, 0, 16, 0" />
+
+        <BoxView BackgroundColor="#C8C7CC" Grid.Column="1" Grid.ColumnSpan="2" VerticalOptions="End">
+          <BoxView.HeightRequest>
+            <OnPlatform x:TypeArguments="x:Double"
+							iOS="0.5"
+							Android="0.3"/>
+          </BoxView.HeightRequest>
+        </BoxView>
+      </Grid>
+      <Grid HeightRequest="45"
+				BackgroundColor="White"
+				ColumnSpacing="0">
+
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="16"/>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="1" Text="Mortes: " VerticalTextAlignment="Center" />
+        <Label Grid.Column="2" Text="2 Mortes" VerticalTextAlignment="Center" HorizontalTextAlignment="End" Margin="0, 0, 16, 0" />
+
+        <BoxView BackgroundColor="#C8C7CC" Grid.Column="1" Grid.ColumnSpan="2" VerticalOptions="End">
+          <BoxView.HeightRequest>
+            <OnPlatform x:TypeArguments="x:Double"
+							iOS="0.5"
+							Android="0.3"/>
+          </BoxView.HeightRequest>
+        </BoxView>
+      </Grid>
+
+      <Grid HeightRequest="45"
+				BackgroundColor="White"
+				ColumnSpacing="0">
+
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="16"/>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="1" Text="Intervalo Médio de crias: " VerticalTextAlignment="Center" />
+        <Label Grid.Column="2" Text="7 meses" VerticalTextAlignment="Center" HorizontalTextAlignment="End" Margin="0, 0, 16, 0" />
+
+        <BoxView BackgroundColor="#C8C7CC" Grid.Column="1" Grid.ColumnSpan="2" VerticalOptions="End">
+          <BoxView.HeightRequest>
+            <OnPlatform x:TypeArguments="x:Double"
+							iOS="0.5"
+							Android="0.3"/>
+          </BoxView.HeightRequest>
+        </BoxView>
+      </Grid>
+      
+      <Label TextColor="#717175" Text="PARIÇÕES DA VACA">
+        <Label.Margin>
+          <OnPlatform x:TypeArguments="Thickness"
+						iOS="16,24,16,4"
+						Android="16, 13"/>
+        </Label.Margin>
+        <Label.FontSize>
+          <OnPlatform x:TypeArguments="x:Double"
+						iOS="13"
+						Android="14"/>
+        </Label.FontSize>
+      </Label>
+
+      <BoxView BackgroundColor="#C8C7CC">
+        <BoxView.HeightRequest>
+          <OnPlatform x:TypeArguments="x:Double"
+						iOS="0.5"
+						Android="0.3"/>
+        </BoxView.HeightRequest>
+      </BoxView>
+        <syncfusion:SfDataGrid x:Name="VacasGrid"
+                           ColumnSizer="Star"
+                           AutoGenerateColumns="False"
+                           AllowSorting="True"
+                           ItemsSource="{Binding FilhosDaVacaSelecionada}">
+          <syncfusion:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns">
+            <syncfusion:GridTextColumn HeaderText="Ano de Nascimento"
+                                       MappingName="AnoDeNascimento" />
+            <syncfusion:GridTextColumn HeaderText="Sexo"
+                                       MappingName="Genero" />
+          </syncfusion:SfDataGrid.Columns>
+        </syncfusion:SfDataGrid>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>
